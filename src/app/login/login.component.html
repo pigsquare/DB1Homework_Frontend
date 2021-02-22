@@ -1,0 +1,20 @@
+<p>login works</p>
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+
+        <p>user</p>
+    <label>
+      <input #username formControlName="username" matInput type="text">
+    </label>
+    <p>password</p>
+
+    <label>
+      <input #password formControlName="password" matInput type="password">
+    </label>
+
+    <div class="form__submit-container">
+      <button [disabled]="!loginForm.valid" color="primary" mat-raised-button>登录</button>
+    </div>
+  </form>
+</div>
+

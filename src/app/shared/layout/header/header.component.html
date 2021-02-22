@@ -1,0 +1,31 @@
+<header #header class="app-layout-header">
+  <p>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span routerLink="/">选课管理系统</span>
+        <span class="example-spacer"></span>
+        <span class="mat-small">
+          {{user && user.id}} {{user && user.username}}
+          <button *ngIf="user.id!=null" mat-icon-button [mat-menu-trigger-for]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button (click)="navToIndex()" mat-menu-item>
+            <mat-icon>home</mat-icon>
+            <span>进入系统</span>
+          </button>
+          <button (click)="changePassword()" mat-menu-item>
+            <mat-icon>border_color</mat-icon>
+            <span>修改密码</span>
+          </button>
+          <button (click)="logout()" mat-menu-item>
+            <mat-icon>exit_to_app</mat-icon>
+            <span>退出系统</span>
+          </button>
+        </mat-menu>
+        </span>
+      </mat-toolbar-row>
+
+    </mat-toolbar>
+  </p>
+</header>

@@ -10,6 +10,7 @@ import {catchError} from 'rxjs/operators';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatExpansionPanel} from '@angular/material/expansion';
+import {MatPaginator} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-stu-manage',
@@ -56,17 +57,22 @@ export class StuManageComponent implements OnInit, AfterViewInit{
   @ViewChild(MatSort) sort: MatSort;
   dataSource: MatTableDataSource<Stu>;
   @ViewChild('expansionPanel') expansionPanel: MatExpansionPanel;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit(): void {
-    this.getStu().subscribe(r => {this.students = r; });
+    this.getStu();
     this.selected = false;
     this.dataSource = new MatTableDataSource(this.students);
   }
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
   }
-  getStu(): Observable<Stu[]>{
-    return this.stuService.getStu();
+  getStu(): void{
+    this.stuService.getStu().subscribe(r => {
+      this.dataSource = new MatTableDataSource<Stu>(r);
+      this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
+    });
   }
   getStuBySno(sno: number): void{
     // this.stuService.getOneStu(sno).subscribe(r => this.stu = r);
@@ -87,7 +93,7 @@ export class StuManageComponent implements OnInit, AfterViewInit{
   deleteStu(delStu: Stu): void{
     if (confirm('Are you sure to delete ' + delStu.sname + '?')){
       this.stuService.delStu(delStu.sno).subscribe(r => {
-        this.getStu().subscribe(r1 => this.students = r1);
+        this.getStu();
       });
     }
   }
@@ -96,7 +102,7 @@ export class StuManageComponent implements OnInit, AfterViewInit{
     {
       this.stuService.addStu(this.addForm.value).subscribe(
         r => {
-          this.getStu().subscribe(r1 => this.students = r1);
+          this.getStu();
           this.addForm.reset();
           this.panelOpenState = false;
           console.log(r);
@@ -111,7 +117,7 @@ export class StuManageComponent implements OnInit, AfterViewInit{
     if (this.updateForm.valid){
       this.stuService.updateStu(this.updateForm.value).subscribe(
         r => {
-        this.getStu().subscribe(r1 => this.students = r1);
+        this.getStu();
         this.updateForm.reset();
         console.log(r);
         this.selected = false;

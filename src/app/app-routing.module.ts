@@ -9,13 +9,17 @@ import {TeacherGuard} from './shared/guard/teacher.guard';
 import {AdminGuard} from './shared/guard/admin.guard';
 import {HomepageComponent} from './homepage/homepage.component';
 import {StuManageComponent} from './admin/stu-manage/stu-manage.component';
+import {TeacherManageComponent} from './admin/teacher-manage/teacher-manage.component';
+import {AdminManageComponent} from './admin/admin-manage/admin-manage.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 's', component: StuHomeComponent, canActivate: [StuGuardGuard], canActivateChild: [StuGuardGuard]},
   {path: 't', component: TeacherHomeComponent, canActivate: [TeacherGuard], canActivateChild: [TeacherGuard]},
   {path: 'admin', component: AdminHomeComponent, canActivate: [AdminGuard], canActivateChild: [AdminGuard], children: [
-      {path: 'stu-manage', component: StuManageComponent}
+      {path: 'stu_manage', component: StuManageComponent},
+      {path: 'teacher_manage', component: TeacherManageComponent},
+      {path: 'admin_manage', component: AdminManageComponent},
     ]},
   {path: '', component: HomepageComponent},
   // {path: '**', redirectTo: ''},

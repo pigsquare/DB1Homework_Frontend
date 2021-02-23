@@ -52,7 +52,7 @@ export class HeaderComponent implements OnInit {
             console.log(r1);
             this.snackBar.open(r1.res, undefined, {duration: 2000});
           },
-          e => {
+          () => {
             this.snackBar.open('修改密码失败', undefined, {duration: 2000});
           });
       }

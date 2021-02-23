@@ -9,6 +9,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import {catchError} from 'rxjs/operators';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import {MatExpansionPanel} from '@angular/material/expansion';
 
 @Component({
   selector: 'app-stu-manage',
@@ -54,6 +55,7 @@ export class StuManageComponent implements OnInit, AfterViewInit{
 
   @ViewChild(MatSort) sort: MatSort;
   dataSource: MatTableDataSource<Stu>;
+  @ViewChild('expansionPanel') expansionPanel: MatExpansionPanel;
 
   ngOnInit(): void {
     this.getStu().subscribe(r => {this.students = r; });
@@ -98,6 +100,7 @@ export class StuManageComponent implements OnInit, AfterViewInit{
           this.addForm.reset();
           this.panelOpenState = false;
           console.log(r);
+          this.expansionPanel.close();
           this.snakeBar.open('添加成功', undefined, {duration: 2000});
         }, (err: HttpErrorResponse) => {
           this.snakeBar.open('添加失败', undefined, {duration: 2000});

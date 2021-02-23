@@ -35,6 +35,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
+import { TeacherManageComponent } from './admin/teacher-manage/teacher-manage.component';
+import { AdminManageComponent } from './admin/admin-manage/admin-manage.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatTreeModule} from '@angular/material/tree';
 
 @NgModule({
   declarations: [
@@ -48,6 +53,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     HomepageComponent,
     StuManageComponent,
     ChangePasswordDialogComponent,
+    TeacherManageComponent,
+    AdminManageComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +78,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSelectModule,
     FormsModule,
     MatDialogModule,
+    MatSidenavModule,
+    MatDividerModule,
+    MatTreeModule,
   ],
   providers: [
     MatSnackBar,

@@ -1,0 +1,19 @@
+<h3 mat-dialog-title>{{data.cno}}课程修改</h3>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>课程名</mat-label>
+    <input matInput [(ngModel)]="data.cname" type="text">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>院系</mat-label>
+    <input matInput [(ngModel)]="data.cdept" type="text">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>学分</mat-label>
+    <input matInput [(ngModel)]="data.credit" type="number">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>修改</button>
+  <button mat-button (click)="onNoClick()">取消</button>
+</div>

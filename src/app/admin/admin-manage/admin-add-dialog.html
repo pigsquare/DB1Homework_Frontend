@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>添加管理员</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>id</mat-label>
+    <input matInput [(ngModel)]="data.id" type="text">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>姓名</mat-label>
+    <input matInput [(ngModel)]="data.name" type="text">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>密码</mat-label>
+    <input matInput [(ngModel)]="data.password" type="password">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>添加</button>
+  <button mat-button (click)="onNoClick()">取消</button>
+</div>

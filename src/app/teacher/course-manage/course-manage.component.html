@@ -1,0 +1,34 @@
+<p class="mat-h2">我教的课</p>
+<div>
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="cno">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 课程号 </th>
+      <td mat-cell *matCellDef="let element"> {{element.cno}} </td>
+    </ng-container>
+    <ng-container matColumnDef="cname">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 课程名 </th>
+      <td mat-cell *matCellDef="let element"> {{element.cname}} </td>
+    </ng-container>
+    <ng-container matColumnDef="cdept">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 院系 </th>
+      <td mat-cell *matCellDef="let element"> {{element.cdept}} </td>
+    </ng-container>
+    <ng-container matColumnDef="credit">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> 学分 </th>
+      <td mat-cell *matCellDef="let element"> {{element.credit}} </td>
+    </ng-container>
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> 操作 </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-stroked-button>详情</button>
+        &nbsp;
+        <button mat-stroked-button color="primary" (click)="updateC(element)">修改</button>
+        &nbsp;
+        <button mat-stroked-button color="warn" (click)="deleteC(element)">删除</button> </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[20, 5, 10, 50]" showFirstLastButtons></mat-paginator>
+</div>
+<button mat-raised-button color="primary" (click)="addC()">开设课程</button>

@@ -11,11 +11,16 @@ import {HomepageComponent} from './homepage/homepage.component';
 import {StuManageComponent} from './admin/stu-manage/stu-manage.component';
 import {TeacherManageComponent} from './admin/teacher-manage/teacher-manage.component';
 import {AdminManageComponent} from './admin/admin-manage/admin-manage.component';
+import {CourseManageComponent} from './teacher/course-manage/course-manage.component';
+import {ScoreManageComponent} from './teacher/score-manage/score-manage.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 's', component: StuHomeComponent, canActivate: [StuGuardGuard], canActivateChild: [StuGuardGuard]},
-  {path: 't', component: TeacherHomeComponent, canActivate: [TeacherGuard], canActivateChild: [TeacherGuard]},
+  {path: 't', component: TeacherHomeComponent, canActivate: [TeacherGuard], canActivateChild: [TeacherGuard], children:[
+      {path: 'course_manage', component: CourseManageComponent},
+      {path: 'score_manage', component: ScoreManageComponent},
+    ]},
   {path: 'admin', component: AdminHomeComponent, canActivate: [AdminGuard], canActivateChild: [AdminGuard], children: [
       {path: 'stu_manage', component: StuManageComponent},
       {path: 'teacher_manage', component: TeacherManageComponent},

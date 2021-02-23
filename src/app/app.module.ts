@@ -40,10 +40,16 @@ import {
   TeacherManageComponent,
   UpdateTeacherDialogComponent
 } from './admin/teacher-manage/teacher-manage.component';
-import { AdminManageComponent } from './admin/admin-manage/admin-manage.component';
+import {AddAdminDialogComponent, AdminManageComponent} from './admin/admin-manage/admin-manage.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTreeModule} from '@angular/material/tree';
+import {
+  AddCourseDialogComponent,
+  CourseManageComponent,
+  UpdateCourseDialogComponent
+} from './teacher/course-manage/course-manage.component';
+import { ScoreManageComponent } from './teacher/score-manage/score-manage.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +67,11 @@ import {MatTreeModule} from '@angular/material/tree';
     AdminManageComponent,
     AddTeacherDialogComponent,
     UpdateTeacherDialogComponent,
+    AddAdminDialogComponent,
+    CourseManageComponent,
+    ScoreManageComponent,
+    AddCourseDialogComponent,
+    UpdateCourseDialogComponent,
   ],
   imports: [
     BrowserModule,

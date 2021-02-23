@@ -8,5 +8,5 @@ export class C {
   tno: string;
   cname: string;
   credit: number;
-  sdept: string;
+  cdept: string;
 }

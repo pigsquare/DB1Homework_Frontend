@@ -13,6 +13,7 @@ import {TeacherManageComponent} from './admin/teacher-manage/teacher-manage.comp
 import {AdminManageComponent} from './admin/admin-manage/admin-manage.component';
 import {CourseManageComponent} from './teacher/course-manage/course-manage.component';
 import {ScoreManageComponent} from './teacher/score-manage/score-manage.component';
+import {CourseGradeManageComponent} from './teacher/course-grade-manage/course-grade-manage.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 't', component: TeacherHomeComponent, canActivate: [TeacherGuard], canActivateChild: [TeacherGuard], children:[
       {path: 'course_manage', component: CourseManageComponent},
       {path: 'score_manage', component: ScoreManageComponent},
+      {path: 'course/:id', component: CourseGradeManageComponent},
     ]},
   {path: 'admin', component: AdminHomeComponent, canActivate: [AdminGuard], canActivateChild: [AdminGuard], children: [
       {path: 'stu_manage', component: StuManageComponent},

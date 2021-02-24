@@ -20,7 +20,7 @@
     <ng-container matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef> 操作 </th>
       <td mat-cell *matCellDef="let element">
-        <button mat-stroked-button>详情</button>
+        <button mat-stroked-button (click)="gotoDetail(element.cno)">详情</button>
         &nbsp;
         <button mat-stroked-button color="primary" (click)="updateC(element)">修改</button>
         &nbsp;

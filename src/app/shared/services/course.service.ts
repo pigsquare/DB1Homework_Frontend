@@ -38,4 +38,7 @@ export class CourseService {
   delC(sno: string): Observable<any>{
     return this.http.delete(`/api/c/delete/${sno}`);
   }
+  findByCno(cno: string): Observable<C>{
+    return this.http.get<C>(`/api/c/info/${cno}`);
+  }
 }

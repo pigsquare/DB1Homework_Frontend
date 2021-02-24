@@ -3,11 +3,10 @@ import {Injectable} from '@angular/core';
 @Injectable({
     providedIn: 'root'
 })
-export class SGradeResponse
+export class ScTeacherResponse
 {
-  cno: string;
-  cname: string;
+  sno: string;
+  sname: string;
   grade: number;
-  tname: string;
   point: number;
 }

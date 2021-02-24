@@ -9,6 +9,7 @@ import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog
 import {TAddRequest} from '../../shared/models/t-add-request';
 import {AddTeacherDialogComponent} from '../../admin/teacher-manage/teacher-manage.component';
 import {CAddRequest} from '../../shared/models/c-add-request';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-course-manage',
@@ -25,6 +26,7 @@ export class CourseManageComponent implements OnInit {
     private cService: CourseService,
     private snackBar: MatSnackBar,
     public dialog: MatDialog,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -83,6 +85,10 @@ export class CourseManageComponent implements OnInit {
         });
       }
     });
+  }
+
+  gotoDetail(cno: string): void{
+    this.router.navigateByUrl(`/t/course/${cno}`).then();
   }
 
 }

@@ -49,7 +49,11 @@ import {
   CourseManageComponent,
   UpdateCourseDialogComponent
 } from './teacher/course-manage/course-manage.component';
-import { ScoreManageComponent } from './teacher/score-manage/score-manage.component';
+import {ScoreManageComponent} from './teacher/score-manage/score-manage.component';
+import {CourseGradeManageComponent, GradeStuDialogComponent} from './teacher/course-grade-manage/course-grade-manage.component';
+import { SelectCourseComponent } from './stu/select-course/select-course.component';
+import { DropCourseComponent } from './stu/drop-course/drop-course.component';
+import { GradeInfoComponent } from './stu/grade-info/grade-info.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +76,11 @@ import { ScoreManageComponent } from './teacher/score-manage/score-manage.compon
     ScoreManageComponent,
     AddCourseDialogComponent,
     UpdateCourseDialogComponent,
+    CourseGradeManageComponent,
+    GradeStuDialogComponent,
+    SelectCourseComponent,
+    DropCourseComponent,
+    GradeInfoComponent,
   ],
   imports: [
     BrowserModule,

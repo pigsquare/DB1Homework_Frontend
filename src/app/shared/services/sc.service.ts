@@ -21,4 +21,11 @@ export class ScService {
     return this.http.post('/api/sc/grade', req);
   }
 
+  selectC(cno: string): Observable<any>{
+    return this.http.put(`/api/sc/select/${cno}`, null);
+  }
+  dropC(cno: string): Observable<any>{
+    return this.http.delete(`/api/sc/drop/${cno}`);
+  }
+
 }

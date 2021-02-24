@@ -4,6 +4,7 @@ import {C} from '../models/c';
 import {Observable} from 'rxjs';
 import {CAddRequest} from '../models/c-add-request';
 import {CourseAvailResponse} from '../models/course-avail-response';
+import {CourseTokenResponse} from '../models/course-token-response';
 
 @Injectable({
   providedIn: 'root'
@@ -29,8 +30,8 @@ export class CourseService {
   getUngradedC(): Observable<CourseAvailResponse[]>{
     return this.http.get<CourseAvailResponse[]>('/api/c/ungraded');
   }
-  getGradedC(): Observable<CourseAvailResponse[]>{
-    return this.http.get<CourseAvailResponse[]>('/api/c/graded');
+  getGradedC(): Observable<CourseTokenResponse[]>{
+    return this.http.get<CourseTokenResponse[]>('/api/c/graded');
   }
   updateC(updRequest: CAddRequest): Observable<any>{
     return this.http.post('/api/c/update', updRequest);

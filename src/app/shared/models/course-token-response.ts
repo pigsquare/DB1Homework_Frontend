@@ -7,6 +7,7 @@ export class CourseTokenResponse
 {
   cno: string;
   cname: string;
+  credit: number;
   grade: number;
   point: number;
 }

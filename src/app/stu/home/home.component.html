@@ -1,1 +1,41 @@
-<p>home works!</p>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p class="mat-h3">学生</p>
+    <div class="mat-list-item">
+      <button type="button" mat-button
+              (click)="navTo('/s/select')">
+        <mat-icon>build</mat-icon>
+        选课
+      </button>
+    </div>
+    <div class="mat-list-item">
+      <button type="button" mat-button
+              (click)="navTo('/s/drop')">
+        <mat-icon>build</mat-icon>
+        退课
+      </button>
+    </div>
+    <div class="mat-list-item">
+      <button type="button" mat-button
+              (click)="navTo('/s/grade')">
+        <mat-icon>build</mat-icon>
+        成绩查询
+      </button>
+    </div>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <div>
+      <div class="mat-h1">
+        <button type="button" mat-button (click)="drawer.toggle()">
+          <mat-icon>view_headline</mat-icon>
+        </button>
+        学生端页面
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div>
+      <br>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-drawer-container>

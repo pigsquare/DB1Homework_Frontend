@@ -26,4 +26,17 @@
   </table>
   <mat-paginator [pageSizeOptions]="[20, 5, 10, 50]" showFirstLastButtons></mat-paginator>
 </div>
+<div>
+  <table class="mat-elevation-z8">
+    <tr>
+      <th>总计学分：{{totalCredit}}</th>
+      <th>获得学分：{{creditGet}}</th>
+      <th>平均成绩：{{avgScore.toFixed(2)}}</th>
+      <th>平均绩点：{{avgPoint.toFixed(2)}}</th>
+    </tr>
+  </table>
+</div>
+<br>
+<div class="mat-h2">成绩分布图</div>
+<div id="g2_c1" style="width: 640px;height:400px;"></div>
 

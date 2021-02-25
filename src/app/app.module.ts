@@ -54,6 +54,7 @@ import {CourseGradeManageComponent, GradeStuDialogComponent} from './teacher/cou
 import { SelectCourseComponent } from './stu/select-course/select-course.component';
 import { DropCourseComponent } from './stu/drop-course/drop-course.component';
 import { GradeInfoComponent } from './stu/grade-info/grade-info.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -107,6 +108,7 @@ import { GradeInfoComponent } from './stu/grade-info/grade-info.component';
     MatSidenavModule,
     MatDividerModule,
     MatTreeModule,
+    MatProgressBarModule,
   ],
   providers: [
     MatSnackBar,
